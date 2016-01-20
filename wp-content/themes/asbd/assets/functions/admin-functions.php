@@ -341,283 +341,35 @@ class ckCustomPostTypes {
 
 	public function jlfoundation_custom_meta() {
 
-		$prefix = '_jlfoundation_';
+		$prefix = '_asbd_';
 		// NEW META
-	 	$parent_page_meta = new_cmb2_box( array(
-			'id'            => $prefix . 'parent_page_meta',
-			'title'         => __( 'Parent Page Options', 'cmb2' ),
-			'object_types'  => array( 'page' ), // Post type
-	        'show_on'       => array( 'key' => 'page-template', 'value' => 'template-parent.php' ),
-			'context'       => 'normal',
-			'priority'      => 'high',
-			'show_names'    => true,
-		) );
-
-		$parent_page_meta->add_field( array(
-			'name'       => __( 'Hero Text', 'cmb2' ),
-			'desc'       => __( 'Text to appear over hero image', 'cmb2' ),
-			'id'         => $prefix . 'parent_hero_text',
-			'type'       => 'wysiwyg',
-			'options' => array(
-				'teeny' => true,
-				'wpautop' => true,
-				'textarea_rows' => get_option('default_post_edit_rows', 1),
-				'media_buttons' => false
-			),
-		) );
-
 	 	$page_meta = new_cmb2_box( array(
 			'id'            => $prefix . 'page_meta',
-			'title'         => __( 'General Page Options', 'cmb2' ),
+			'title'         => __( 'Page Options', 'cmb2' ),
 			'object_types'  => array( 'page' ), // Post type
-	        'show_on'       => array( 'key' => 'page-template', 'value' => array('template-parent.php','template-home.php','template-donate.php') ),
 			'context'       => 'normal',
 			'priority'      => 'high',
 			'show_names'    => true,
 		) );
 
+		$page_meta->add_field( array(
+			'name'       => __( 'Page Title', 'cmb2' ),
+			'desc'       => __( 'Alternate page title', 'cmb2' ),
+			'id'         => $prefix . 'page_title',
+			'type'       => 'text',
+		) );
+
 
 		$page_meta->add_field( array(
-			'name'       => __( 'Short Menu Title', 'cmb2' ),
-			'id'         => $prefix . 'short_title',
+			'name'       => __( 'Page Quote Author', 'cmb2' ),
+			'id'         => $prefix . 'page_quote_author',
 			'type'       => 'text',
 		) );
 
 		$page_meta->add_field( array(
-			'name'       => __( 'Page Sub Title', 'cmb2' ),
-			'id'         => $prefix . 'page_subtitle',
-			'type'       => 'text',
-		) );
-
-		$page_meta->add_field( array(
-			'name'       => __( 'Page Introduction', 'cmb2' ),
-			'desc'       => __( 'Introduction paragraph for page', 'cmb2' ),
-			'id'         => $prefix . 'page_intro',
-			'show_on_cb'  => 'cmb_id_not_home',
-			'type'       => 'wysiwyg',
-			'options' => array(
-				'teeny' => true,
-				'textarea_rows' => get_option('default_post_edit_rows', 5),
-				'media_buttons' => true
-			),
-		) );
-
-		$page_meta->add_field( array(
-			'name'       => __( 'Page Details', 'cmb2' ),
-			'desc'       => __( 'More detailed paragraph for page', 'cmb2' ),
-			'id'         => $prefix . 'page_details',
-			'show_on_cb'  => 'cmb_id_donate',
-			'type'       => 'wysiwyg',
-			'options' => array(
-				'teeny' => true,
-				'textarea_rows' => get_option('default_post_edit_rows', 5),
-				'media_buttons' => false
-			),
-		) );
-
-	 	$culture_meta = new_cmb2_box( array(
-			'id'            => $prefix . 'page_culture_meta',
-			'title'         => __( 'Culture Page Options', 'cmb2' ),
-			'object_types'  => array( 'page' ), // Post type
-			'show_on'       => array( 'key' => 'page-template', 'value' => array('template-culture.php') ),
-			'context'       => 'normal',
-			'priority'      => 'high',
-			'show_names'    => true,
-		) );
-
-		$culture_meta->add_field( array(
-			'name'       => __( 'Walt Whitman Caption', 'cmb2' ),
-			'id'         => $prefix . 'page_whitman_caption',
-			'show_on_cb'  => 'cmb_id_culture',
-			'priority'      => 'low',
-			'type'       => 'wysiwyg',
-			'priority'      => 'low',
-			'options' => array(
-				'teeny' => true,
-				'textarea_rows' => get_option('default_post_edit_rows', 5),
-				'media_buttons' => false
-			),
-		) );
-
-		$culture_meta->add_field( array(
-			'name'       => __( 'Walt Whitman Title', 'cmb2' ),
-			'id'         => $prefix . 'page_whitman_title',
-			'show_on_cb'  => 'cmb_id_community',
-			'priority'      => 'low',
-			'type'       => 'wysiwyg',
-			'priority'      => 'low',
-			'options' => array(
-				'teeny' => true,
-				'textarea_rows' => get_option('default_post_edit_rows', 5),
-				'media_buttons' => false
-			),
-		) );
-
-		$culture_meta->add_field( array(
-			'name'       => __( 'Walt Whitman Details', 'cmb2' ),
-			'desc'       => __( 'More detailed paragraph for page', 'cmb2' ),
-			'id'         => $prefix . 'page_whitman_details',
-			'show_on_cb'  => 'cmb_id_community',
-			'type'       => 'wysiwyg',
-			'priority'      => 'low',
-			'options' => array(
-				'teeny' => true,
-				'textarea_rows' => get_option('default_post_edit_rows', 5),
-				'media_buttons' => false
-			),
-		) );
-
-
-	 	$child_page_meta = new_cmb2_box( array(
-			'id'            => $prefix . 'child_page_meta',
-			'title'         => __( 'Child Page Options', 'cmb2' ),
-			'object_types'  => array( 'page' ), // Post type
-			'context'       => 'normal',
-			'priority'      => 'low',
-			'show_names'    => true,
-		) );
-
-		$child_page_meta->add_field( array(
-			'name'       => __( 'Short Menu Title', 'cmb2' ),
-			'id'         => $prefix . 'short_title',
-			'type'       => 'text',
-		) );
-
-		$child_page_meta->add_field( array(
-			'name'       => __( 'Child Page Introduction', 'cmb2' ),
-			'desc'       => __( 'Introduction paragraph for child page', 'cmb2' ),
-			'id'         => $prefix . 'child_page_intro',
-			'type'       => 'wysiwyg',
-			'options' => array(
-				'wpautop' => true,
-				'teeny' => true,
-				'textarea_rows' => get_option('default_post_edit_rows', 5),
-				'media_buttons' => false
-			),
-		) );
-
-	 	$donate_meta = new_cmb2_box( array(
-			'id'            => $prefix . 'donate_meta',
-			'title'         => __( 'Donation Options', 'cmb2' ),
-			'object_types'  => array( 'page' ), // Post type
-	        'show_on'       => array( 'key' => 'page-template', 'value' => array('template-donate.php') ),
-			'context'       => 'normal',
-			'priority'      => 'high',
-			'show_names'    => true,
-		) );
-
-		$donate_meta->add_field( array(
-			'name'       => __( 'Tax Information', 'cmb2' ),
-			'id'         => $prefix . 'tax_text',
+			'name'       => __( 'Page Quote Text', 'cmb2' ),
+			'id'         => $prefix . 'page_quote_content',
 			'type'       => 'textarea',
-		) );
-
-
-	 	$news_item_meta = new_cmb2_box( array(
-			'id'            => $prefix . 'news_item_meta',
-			'title'         => __( 'News Item Options', 'cmb2' ),
-			'object_types'  => array( 'community-news-item' ), // Post type
-			'context'       => 'normal',
-			'priority'      => 'high',
-			'show_names'    => true,
-		) );
-
-		$news_item_meta->add_field( array(
-			'name'       => __( 'Item Link', 'cmb2' ),
-			'desc'       => __( 'Link to where the post should direct', 'cmb2' ),
-			'id'         => $prefix . 'news_item_link',
-			'type'       => 'text_url',
-		) );
-
-		$news_item_meta->add_field( array(
-			'name'       => __( 'Item Meta 1', 'cmb2' ),
-			'desc'       => __( '1st Line of Aditional info to appear below title', 'cmb2' ),
-			'id'         => $prefix . 'news_item_meta_1',
-			'type'       => 'text',
-		) );
-
-		$news_item_meta->add_field( array(
-			'name'       => __( 'Item Meta 2', 'cmb2' ),
-			'desc'       => __( '2nd line of Aditional info', 'cmb2' ),
-			'id'         => $prefix . 'news_item_meta_2',
-			'type'       => 'text',
-		) );
-
-
-	 	$kids_news_item_meta = new_cmb2_box( array(
-			'id'            => $prefix . 'kids_news_item_meta',
-			'title'         => __( 'News Item Options', 'cmb2' ),
-			'object_types'  => array( 'kids-news-item' ), // Post type
-			'context'       => 'normal',
-			'priority'      => 'high',
-			'show_names'    => true,
-		) );
-
-		$kids_news_item_meta->add_field( array(
-			'name'       => __( 'Item Link', 'cmb2' ),
-			'desc'       => __( 'Link to where the post should direct', 'cmb2' ),
-			'id'         => $prefix . 'kids_news_item_link',
-			'type'       => 'text_url',
-		) );
-
-		$kids_news_item_meta->add_field( array(
-			'name'       => __( 'Item Meta 1', 'cmb2' ),
-			'desc'       => __( '1st Line of Aditional info to appear below title', 'cmb2' ),
-			'id'         => $prefix . 'kids_news_item_meta_1',
-			'type'       => 'text',
-		) );
-
-		$kids_news_item_meta->add_field( array(
-			'name'       => __( 'Item Meta 2', 'cmb2' ),
-			'desc'       => __( '2nd line of Aditional info', 'cmb2' ),
-			'id'         => $prefix . 'kids_news_item_meta_2',
-			'type'       => 'text',
-		) );
-
-	 	$kids_store_item_meta = new_cmb2_box( array(
-			'id'            => $prefix . 'kids_store_item_meta',
-			'title'         => __( 'Store Item Options', 'cmb2' ),
-			'object_types'  => array( 'kids-store-item' ), // Post type
-			'context'       => 'normal',
-			'priority'      => 'high',
-			'show_names'    => true,
-		) );
-
-		$kids_store_item_meta->add_field( array(
-			'name'       => __( 'Item Link', 'cmb2' ),
-			'desc'       => __( 'Link to where the post should direct', 'cmb2' ),
-			'id'         => $prefix . 'kids_store_item_link',
-			'type'       => 'text_url',
-		) );
-
-	 	$culture_item_meta = new_cmb2_box( array(
-			'id'            => $prefix . 'culture_item_meta',
-			'title'         => __( 'Culture Item Options', 'cmb2' ),
-			'object_types'  => array( 'culture-item' ), // Post type
-			'context'       => 'normal',
-			'priority'      => 'high',
-			'show_names'    => true,
-		) );
-
-		$culture_item_meta->add_field( array(
-			'name'       => __( 'Item Link', 'cmb2' ),
-			'desc'       => __( 'Link to where the post should direct', 'cmb2' ),
-			'id'         => $prefix . 'culture_item_link',
-			'type'       => 'text_url',
-		) );
-
-		$culture_item_meta->add_field( array(
-			'name'       => __( 'Item Meta 1', 'cmb2' ),
-			'desc'       => __( '1st Line of Aditional info to appear below title', 'cmb2' ),
-			'id'         => $prefix . 'culture_item_meta_1',
-			'type'       => 'text',
-		) );
-
-		$culture_item_meta->add_field( array(
-			'name'       => __( 'Item Meta 2', 'cmb2' ),
-			'desc'       => __( '2nd line of Aditional info', 'cmb2' ),
-			'id'         => $prefix . 'culture_item_meta_2',
-			'type'       => 'text',
 		) );
 
 
