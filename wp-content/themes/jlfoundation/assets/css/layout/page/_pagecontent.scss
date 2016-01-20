@@ -1,0 +1,62 @@
+.page-content{
+	padding: 4rem 0 4rem;
+	@extend %content-m-60-100;
+	text-align: center;
+	.page-child &,
+	.page-template-default &{
+		text-align: left;
+		padding: 2rem 0 4rem;
+	}
+	@include e(entry) {
+		padding-bottom: 2rem;
+	}
+}
+
+.post-content{
+	padding: 0 0 4rem;
+	@extend %content-m-60-100;
+	text-align: left;
+	@include e(entry) {
+		padding-bottom: 2rem;
+	}
+}
+
+.post-content,
+.page-content{
+	@include e(pagination) {
+		width: 100%;
+		position: absolute;
+		@include m(btn) {
+			&.btn-next{
+				float: right;
+			}
+			&.btn-previous{
+				float: left;
+			}
+		}
+	}
+}
+
+.tax{
+	@include m(row) {
+		@include make-row();
+	}
+	@include e(image) {
+		@include make-col();
+		@include make-col-span(6);
+		padding: 0;
+	}
+	@include e(body) {
+		@include make-col();
+		@include make-col-span(6);
+		padding: 2rem 4rem;
+	}
+}
+
+.donate-form{
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+	@include e(wrapper) {
+		@extend %content-m-60-100;
+	}
+}

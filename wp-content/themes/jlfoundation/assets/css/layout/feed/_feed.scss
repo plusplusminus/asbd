@@ -1,0 +1,28 @@
+.page-feed{
+	@include e(filter) {
+		display: block;
+		list-style: none;
+		width: 100%;
+		border-top: $border-width solid $gray-border;
+		margin-bottom: 2rem;
+	}
+	@include e(feed) {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	@include e(row) {
+		@include make-row()
+	}
+	@include e(pagination) {
+		display: block;
+		text-align: center;
+	}
+}
+
+
+.article--container{
+	@include make-col();
+	@include make-col-span(4);
+	margin-bottom: 2rem;
+	z-index: 9;
+}

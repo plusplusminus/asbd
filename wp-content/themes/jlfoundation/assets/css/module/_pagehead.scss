@@ -1,0 +1,153 @@
+.page-head{
+	text-align: center;
+	@extend %content-m-60-100;
+	.page-template-default &,
+	.page-child &,
+	// Lab page
+	.page-id-8 &{
+		padding-bottom: 2rem;
+	}
+	@include e(image) {
+		margin-bottom: 2rem;
+		@include m(img) {
+			display: block;
+			margin: auto;
+		}
+	}
+}
+
+.page-header{
+	@include m(subtitle) {
+		display: inline-block;
+		text-transform: uppercase;
+		color: $gray;
+		font-family: $font-family-sans-serif;
+		font-size: $font-size-sm;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		margin: 2rem 0;
+		.page-id-41 &,
+		.parent-pageid-41 &,
+		.tax-kids-news-type &,
+		.tax-kids-store-type &{
+			font-family: $font-family-kids-heading;
+			color: $kids;
+		}
+		.page-id-41 &{
+			color: #fff !important;
+		}
+	}
+	@include m(intro) {
+		font-size: $font-size-xl;
+		font-weight: 100;
+		line-height: 2.8rem;
+		.page-id-41 &,
+		.parent-pageid-41 &,
+		.tax-kids-news-type &,
+		.tax-kids-store-type &{
+			font-family: $font-family-kids;
+			font-size: 3rem;
+		}
+		.page-id-41 &{
+			color: #fff;
+		}
+		em{
+			color: $default;
+		}
+		strong{
+			font-weight: 400;
+		}
+		a{
+			@extend %link-border;
+		}
+		blockquote{
+			p{
+				color: $default;
+				font-family: $font-family-serif;
+				font-size: 2.5rem;
+				.page-id-41 &,
+				.parent-pageid-41 &,
+				.tax-kids-news-type &,
+				.tax-kids-store-type &{
+					font-family: $font-family-kids-heading;
+				}
+				.page-id-41 &{
+					color: #fff !important;
+				}
+				cite{
+					text-transform: uppercase;
+					color: $gray-dark;
+					font-family: $font-family-sans-serif;
+					text-align: right;
+					font-style: normal;
+					font-weight: 600;
+					font-size: $font-size-base;
+					letter-spacing: 0.1em;
+					display: block;
+					.page-id-41 &,
+					.parent-pageid-41 &{
+						font-family: $font-family-kids;
+					}
+					.page-id-41 &{
+						color: #fff !important;
+					}
+				}
+			}
+		}
+	}
+	@include m(details) {
+		@extend .page-content__entry;
+		margin-top: 3rem; 
+		p{
+			margin-bottom: 0!important;
+		}
+	}
+	@include m(caption) {
+		display: block;
+		max-width: 30%;
+		margin: auto;
+		text-align: center;
+		p{
+			font-family: $font-family-serif;	
+			color: $gray-dark;
+		}
+		
+	}
+
+}
+
+.post-head{
+
+}
+.post-header{
+	@include m(meta) {
+		color: $default;
+		font-family: $font-family-sans-serif;
+		text-transform: uppercase;
+		margin-bottom: 2rem;
+		font-size: $font-size-sm;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+	}
+	@include m(title) {
+		font-family: $font-family-serif;
+		font-weight: 100;
+		font-size: $font-size-xxl;
+		.page-id-41 &,
+		.parent-pageid-41 &,
+		.tax-kids-news-type &,
+		.tax-kids-store-type &{
+			font-family: $font-family-kids-heading;
+		}
+	}
+	@include m(details) {	
+		padding: 2rem 0;
+		font-weight: 100;
+		.details--author{
+		}
+		.details--role{
+			font-style: italic;
+			
+		}
+	}
+}

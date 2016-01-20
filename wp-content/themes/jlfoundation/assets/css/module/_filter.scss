@@ -1,0 +1,27 @@
+.filter-list{
+	border-bottom: $border-width solid $gray-border;
+	@include e(item) {
+		text-transform: uppercase;
+		margin-right: 1rem;
+		letter-spacing: 0.1em;
+		font-family: $font-family-sans-serif;
+		font-weight: 500;
+		.icon{
+			display: inline-block;
+			margin-top: 2px;
+			vertical-align: middle;
+		}
+		a{
+			color: $gray-lighter;
+			transition: 0.3s;
+			&:hover,
+			&:focus,
+			&:active{
+				color: $gray-dark;
+				@extend %no-td;
+
+			}
+		}
+		@extend .filter-list__item;
+	}
+}

@@ -1,0 +1,22 @@
+.page-head{
+	padding: 4rem 0;
+}
+
+.page-header{
+	padding-bottom: 2rem;
+	.page-child &,
+	.page-template-default &,
+	.home &,
+	.page-template-template-donate &,
+	// Lab page
+	.page-id-8 &{
+		padding-bottom: 0;
+	}
+}
+.post-head{
+	.post-header{
+		@extend %content-m-60-100;
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+}

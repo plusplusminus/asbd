@@ -1,0 +1,249 @@
+.page-nav{
+	background-color: $gray-light;
+	position: relative;
+	body.page-id-41 &{
+		background: #fff;
+	}
+	@include m(downlink) {
+		@extend %downlink;
+	}
+}
+.nav-block{
+	position: relative;
+	@include e(content) {
+		background: #fff;
+		padding: 2rem 2rem 3rem 2rem;
+		.page-nav--sticky &{
+			padding: 1rem;
+			transition: 0.6s;
+		}
+	}
+	@include e(header) {
+		position: relative;
+		&:after{
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: -1.5rem;
+			width: 3rem;
+			height: ($border-width * 3);
+			display: block;
+			.page-nav--sticky &{
+				display: none;
+			}
+		}
+	}
+	@include e(title) {
+		font-size: $font-size-lg;
+		margin-bottom: 2rem;
+		.page-id-41 .page-nav--sub &,
+		.parent-pageid-41 .page-nav--sub &{
+			font-family: $font-family-kids;
+			font-size: $font-size-xxl;
+		}
+		.page-nav--sticky &{
+			margin-bottom: 0;
+		}
+		.page-nav--sticky &{
+			color: #fff;
+		}
+		em{
+			font-weight: 100;
+		}
+		.page-nav--sub &{
+			font-weight: 100;
+			em{
+				font-style: normal;
+			}
+		}
+	}
+	@include e(text) {
+		font-family: $font-family-serif;
+		font-size: 1.2rem;
+		padding-top: 1rem;
+		line-height: 1.4rem;
+		.page-id-41 .page-nav--sub &,
+		.parent-pageid-41 .page-nav--sub &{
+			font-family: $font-family-sans-serif;
+		}
+	}
+	@include e(image) {
+		padding: 40px;
+		text-align: center;
+		background-position: center center;
+		background-repeat: repeat;
+		transition: 0.6s;
+		.nav-block:hover &{	
+		}
+		@include m(btn) {
+			@extend %btn;
+			@extend %btn-primary;
+			.nav-block:hover &{	
+	    		background-color: #fff;
+	    		.icon{
+	    			right: 0.8rem;
+	    			opacity: 1;
+	    		}
+			}
+		}
+	}
+
+	@include m(link) {
+		@extend %abs-link;
+	}
+
+}
+
+.nav-block.page-id-5{
+	.nav-block--home{
+		.nav-block__content{
+			.nav-block__header{
+				&:after{
+					background-color: $foundation !important;
+				}
+			}
+		}
+		.nav-block__image{
+			background-color: $foundation !important;
+			background-image: url('assets/images/patterns/foundation.png') !important;
+			.nav-block__image--btn{
+				background-color: $foundation;
+			}
+		}
+	}
+	&:hover{
+		.nav-block--home{
+			.nav-block__image--btn{
+				color: $foundation;
+				background-color: #fff;
+				.icon{
+					color: $foundation;
+				}
+			}
+		}
+	}
+}
+
+// NEED TO FIX THIS
+.nav-block.page-id-10{
+	.nav-block--home{
+		.nav-block__content{
+			.nav-block__header{
+				&:after{
+					background-color: $education !important;
+				}
+			}
+		}
+		.nav-block__image{
+			background-color: $education !important;
+			background-image: url('assets/images/patterns/education.png') !important;
+			.nav-block__image--btn{
+				background-color: $education;
+			}
+		}
+	}
+	&:hover{
+		.nav-block--home{
+			.nav-block__image--btn{
+				color: $education;
+				background-color: #fff;
+				.icon{
+					color: $education;
+				}
+			}
+		}
+	}
+}
+
+
+.nav-block.page-id-8{
+	.nav-block--home{
+		.nav-block__content{
+			.nav-block__header{
+				&:after{
+					background-color: $lab !important;
+				}
+			}
+		}
+		.nav-block__image{
+			background-color: $lab !important;
+			background-image: url('assets/images/patterns/lab.png') !important;
+			.nav-block__image--btn{
+				background-color: $lab;
+			}
+		}
+	}
+	&:hover{
+		.nav-block--home{
+			.nav-block__image--btn{
+				color: $lab;
+				background-color: #fff;
+				.icon{
+					color: $lab;
+				}
+			}
+		}
+	}
+}
+
+
+.nav-block.page-id-13{
+	.nav-block--home{
+		.nav-block__content{
+			.nav-block__header{
+				&:after{
+					background-color: $community !important;
+				}
+			}
+		}
+		.nav-block__image{
+			background-color: $community !important;
+			background-image: url('assets/images/patterns/community.png') !important;
+			.nav-block__image--btn{
+				background-color: $community;
+			}
+		}
+	}
+	&:hover{
+		.nav-block--home{
+			.nav-block__image--btn{
+				color: $community;
+				background-color: #fff;
+				.icon{
+					color: $community;
+				}
+			}
+		}
+	}
+}
+
+
+.nav-block.page-id-41{
+	.nav-block--home{
+		.nav-block__content{
+			.nav-block__header{
+				&:after{
+					background-color: $kids !important;
+				}
+			}
+		}
+		.nav-block__image{
+			background-color: $kids !important;
+			background-image: url('assets/images/patterns/kids.png') !important;
+			.nav-block__image--btn{
+				background-color: $kids;
+			}
+		}
+	}
+	&:hover{
+		.nav-block--home{
+			.nav-block__image--btn{
+				color: $kids;
+				background-color: #fff;
+				.icon{
+					color: $kids;
+				}
+			}
+		}
+	}
+}

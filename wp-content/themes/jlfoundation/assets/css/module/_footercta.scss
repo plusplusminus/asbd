@@ -1,0 +1,90 @@
+.footer-cta{
+	background: $brand-bg;
+	text-align: center;
+	@include m(title) {
+		font-weight: 100;
+		color: #fff;
+		font-size: 1.6rem;
+		margin-bottom: 3rem;
+	}
+}
+
+.cta-block{
+	background: $brand-bg-dark;
+	position: relative;
+	overflow: hidden;
+	@include e(image) {	
+		overflow: hidden;
+		@include m(img) {	
+			transition: 0.3s;
+			@extend %img-responsive;
+			.cta-block:hover &{
+				transform: scale(1.1);
+				opacity: 0.5;
+			}
+		}
+	}
+	@include e(header) {	
+		padding-top: 1rem;
+		padding-bottom: 3rem;
+		position: relative;
+		overflow: hidden;
+		&:after{
+			content: '';
+			position: absolute;
+			width: 2rem;
+			height: ($border-width * 2);
+			left: 50%;
+			right: 50%;
+			bottom: 1.5rem;
+			background: $brand-bg-darker;
+			margin-left: -1rem;
+		}
+	}
+	@include m(title) {	
+		color: #fff;
+		font-family: $font-family-sans-serif;
+		text-transform: uppercase;
+		font-size: $font-size-sm;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+	}
+	@include e(text) {	
+		color: #fff;
+		font-family: $font-family-serif;
+		letter-spacing: 0.1em;
+		line-height: 1.2rem;
+		font-weight: 100;
+		a{
+			text-decoration: none;
+		}
+
+	}
+	@include e(footer) {	
+		background: $brand-bg-light;
+		display: inline-block;
+		height: 3.5rem;
+		position: absolute;
+		bottom: -3.3rem;
+		width: 100%;
+		left: 0;
+		right: 0;
+		color: #fff;
+		transition: 0.3s;
+		@extend %btn;
+		@extend %btn-block;
+		.icon{
+			color: #fff;
+			font-size: 1.8rem;
+			line-height: 0;
+			vertical-align: middle;
+			margin-left: 1rem; 
+		}
+		.cta-block:hover &{
+			bottom: 0;
+		}
+	}
+	.abs-link{
+		@extend %abs-link;
+	}
+}

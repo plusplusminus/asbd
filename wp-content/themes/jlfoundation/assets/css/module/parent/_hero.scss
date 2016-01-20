@@ -1,0 +1,39 @@
+.hero{
+	position: relative;
+	@include e(image) {
+		position: relative;
+		img {
+			margin:auto;
+			width: 100%;
+			height: auto;
+		}
+	}
+	@include e(heading) {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		right: 0;
+		text-align: center;
+		z-index: 1;
+		@include m(title) {
+			font-size: $font-size-xxl;
+			color: #fff;
+			font-weight: 400;
+			margin: 0;
+			margin-top: -1.5rem;
+			.page-id-41 &{
+				font-family: $font-family-kids;
+				font-size: 8rem;
+				line-height: 6rem;
+			}
+			@extend %text-shadow--heading;
+		}
+	}
+	@include m(pattern) {
+		@extend %hero-pattern;
+		body.page-id-41 &{
+			display: none;
+		}
+	}
+
+}

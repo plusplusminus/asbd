@@ -1,0 +1,271 @@
+.page-content,
+.post-content{
+	position: relative;
+	@include m(uplink) {
+		@extend %uplink;
+		.page-template-template-parent &{
+			display: none;
+		}
+	}
+	@include e(entry) {
+		// Kids
+		.page-id-41 &,
+		.parent-pageid-41 &{
+			font-family: $font-family-kids;
+			font-size: 2.4rem;
+		}
+		font-size: 1.2rem;
+		font-weight: 100;
+		p{
+			margin-bottom: 2rem;
+			.page-id-41 &{
+				color: #fff !important;
+			}
+		}
+		strong{
+			font-weight: 400;
+		}
+		em{
+			color: $default;
+		}
+		p a{
+			@extend %link-border;
+		}
+		a{
+			img{
+				transition: 0.3s;
+			}
+			&:hover{
+				img{
+					transform: translate3d(0,-5%,0);
+				}
+			}
+		}
+		blockquote{
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+			position: relative;
+			.single-post &{
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				margin-right: -20%;
+			}
+			&:before,
+			&:after{
+				content: '';
+				position: absolute;
+				height: 4rem;
+				width: ($border-width * 2);
+				background-color: darken($gray-light,5%);
+				left: 50%;
+				.single-post &{
+					display: none;
+				}
+			}
+			&:before{
+				top: 0;
+			}
+			&:after{
+				bottom: 0;
+			}
+			p{
+				font-family: $font-family-serif;
+				font-size: $font-size-xl;
+				color: $default;
+				margin-bottom: 2rem;
+				margin-top: 2rem;
+				.page-id-41 &,
+				.parent-pageid-41 &{
+					font-family: $font-family-kids-heading;
+				}
+				.single-post &{
+					font-size: $font-size-xl;
+					text-align: right;
+				}
+
+				cite{
+					text-transform: uppercase;
+					color: $gray-dark;
+					font-family: $font-family-sans-serif;
+					text-align: right;
+					font-style: normal;
+					font-weight: 600;
+					font-size: $font-size-base;
+					letter-spacing: 0.1em;
+					display: block;
+					.page-id-41 &,
+					.parent-pageid-41 &{
+						font-family: $font-family-kids;
+					}
+					.single-post &{
+						margin-top: 2rem;
+					}
+				}
+			}
+		}
+		.page-child &{
+			h2{
+				font-weight: 100;
+				margin-bottom: 4rem;
+				small{
+					text-transform: uppercase;
+					font-weight: 600;
+					font-size: 50%;
+					letter-spacing: 0.1em;
+					color: $gray;
+					font-family: $font-family-sans-serif;
+				}
+			}
+		}
+	}
+}
+
+.page-content__pagination,
+.post-content__pagination,
+.page-feed__pagination{
+	@include m(btn) {
+		@extend %btn;
+		.page-id-41 &,
+		.parent-pageid-41 &{
+			font-family: $font-family-kids-heading;
+			color: $kids;
+		}
+		&.btn-next{
+			@extend %btn-link;
+		}
+		&.btn-previous{
+			@extend %btn-link;
+			.icon{
+				transform: rotate(180deg);
+			}
+		}
+		&.btn-more{
+			@extend %btn-primary;
+			background-color: $silo-default;
+			margin-bottom: 4rem;
+		}
+	}
+}
+
+// Donate Page
+.tax{
+	background-color: $brand-bg-darker;
+	@include e(image) {
+		@include m(img) {
+			@extend %img-responsive;
+		}
+	}
+	@include e(body) {
+	}
+	@include e(header) {
+		position: relative;
+		margin-bottom: 3rem;
+		@include m(title) {
+			color: #fff;
+			font-weight: 100;
+			margin-top: 0;
+		}
+		&:after{
+		    content: "";
+		    position: absolute;
+		    left: 0;
+		    bottom: -1.5rem;
+		    width: 3rem;
+		    height: 3px;
+		    background: $brand-tax;
+		    display: block;
+		 }
+	}
+	@include e(content) {
+		@include m(text) {
+			font-family: $font-family-serif;
+			color: $gray-light;
+			font-size: $font-size-body;
+			margin-bottom: 2rem;
+		}
+	}
+	@include e(footer) {
+		@include m(btn) {
+			@extend %btn;
+			@extend %btn-primary;
+		}
+	}
+
+
+}
+
+.donate-form{
+	background-color: $gray-light;
+}
+
+// Our Lab Page
+.page-id-8 #submenu{
+	visibility: hidden;
+	padding:0;
+}
+.lab-partners{
+	background: $gray-light;
+	padding: 2rem 0;
+	margin-top: 2rem; 
+	margin-bottom: 2rem;
+	@include e(wrapper) {
+		@include make-col();
+		@include make-col-span(6);
+		@include make-col-offset(3);
+	}
+	@include e(image) {
+		@include make-col();
+		@include make-col-span(6);
+		text-align: center;
+		overflow:hidden;
+		@include m(img) {
+			@extend %img-responsive;
+		}
+	}
+	a{
+		img{
+			transition: 0.3s;
+		}
+		&:hover{
+			img{
+				transform: translate3d(0,-5%,0);
+			}
+		}
+	}
+}
+
+
+// CME Page
+.cme-partners{
+	background: $gray-light;
+	padding: 2rem 0;
+	margin-top: 2rem; 
+	margin-bottom: 2rem;
+	@include e(wrapper) {
+		@include make-col();
+		@include make-col-span(10);
+		@include make-col-offset(1);
+	}
+	@include e(image) {
+		@include make-col();
+		@include make-col-span(6);
+		text-align: center;
+		@include m(img) {
+			@extend %img-responsive;
+		}
+	}
+	a{
+		img{
+			transition: 0.3s;
+		}
+		&:hover{
+			img{
+				transform: translate3d(0,-5%,0);
+			}
+		}
+	}
+}

@@ -1,0 +1,271 @@
+
+
+$silo-bg-default: "assets/images/patterns/foundation.png";
+$silo-bg-sticky-default: "assets/images/patterns/sticky-foundation.png";
+$silo-bg-hero-default: "assets/images/patterns/hero-foundation.png";
+@mixin foundation-theme($silo-color:$silo-default, $silo-bg:$silo-bg-default, $silo-bg-sticky:$silo-bg-sticky-default, $silo-bg-hero:$silo-bg-hero-default) {
+	// Hero Patters
+	.hero--pattern{
+		background-image: url($silo-bg-hero);	
+	}
+
+	// Page elements
+	.page-header--intro a,
+	.page-content__entry p a,
+	.page-header--details p a,
+	.post-content__entry p a{
+		color: $silo-color;
+		border-color: $silo-color;
+		&:hover{
+			border-color: transparent;
+		}
+	}
+	.page-header--intro em{
+		color: $silo-color;
+	}
+	.page-header--intro blockquote p{
+		color: $silo-color;	
+	}
+	.page-content__entry blockquote p,
+	.page-header--details blockquote p,
+	.post-content__entry blockquote p,
+	.page-content__entry em,
+	.page-header--details em,
+	.post-content__entry em{
+		color: $silo-color;
+	}
+	.page-nav--downlink,
+	.page-content--uplink,
+	.post-content--uplink{
+		background-color: $silo-color;	
+	}
+	.page-content__pagination--btn.btn-next:hover,
+	.post-content__pagination--btn.btn-next:hover,
+	.page-content__pagination--btn.btn-previous:hover,
+	.post-content__pagination--btn.btn-previous:hover{
+		color:$silo-color;
+	}
+	.page-content__pagination--btn.btn-more,
+	.post-content__pagination--btn.btn-more,
+	.page-feed__pagination--btn.btn-more{
+		background-color: $silo-color;		
+		color: #fff;
+		&:hover{
+			color:$silo-color;
+			background-color: #fff;
+			border-color: $silo-color;
+		}
+	}
+
+	.tax__footer--btn{
+		background-color: $silo-color;
+		border-color: $silo-color;
+		.icon{
+			color: #fff;
+		}
+		&:hover{
+			background-color: #fff;
+			color: $silo-color;
+			.icon{
+				color: $silo-color;
+			}
+		}
+	}
+	// modals
+	.modal-title{
+		color: $silo-color;
+	}
+
+	// page-nav--sticky
+	.page-nav--sticky{
+		background-image: url($silo-bg-sticky);
+	}
+	.page-nav--sticky .nav-block .nav-block__content{
+		background-color: $silo-color;		
+	}
+	.page-nav--sticky .nav-block:hover .nav-block__content,
+	.page-nav--sticky .nav-block.active .nav-block__content{
+		background-color: darken($silo-color,15%);
+	}
+
+	// page-nav--home & inline
+	.page-nav--sub .nav-block,
+	.nav-block--home{
+		.nav-block__header{
+			&:after{
+				background-color: $silo-color;
+			}
+		}
+		.nav-block__image{
+			background-color: $silo-color !important;
+			background-image: url($silo-bg) !important;	
+		}
+		.nav-block__image--btn{
+			background-color: $silo-color;
+			.icon{
+				color: #fff;
+			}
+		}
+		&:hover{
+			.nav-block__image--btn{
+				color: $silo-color;
+				background-color: #fff;
+				.icon{
+					color: $silo-color;
+				}
+			}
+		}
+	}
+
+	// Gravity
+	.gform_wrapper .gform_body .gform_fields .gfield.gsection .gsection_title {color: $silo-color;}
+	.gform_wrapper .gform_footer input[type=submit]{
+		background-color: $silo-color;
+		&:hover{
+			color: $silo-color;
+		}
+	}
+	
+}
+
+.page-id-5,
+.parent-pageid-5{
+	$silo-color: $foundation;
+	$silo-bg: "assets/images/patterns/foundation.png";
+	$silo-bg-sticky: "assets/images/patterns/sticky-foundation.png";
+	$silo-bg-hero: "assets/images/patterns/hero-foundation.png";
+	@include foundation-theme($silo-color,$silo-bg,$silo-bg-sticky,$silo-bg-hero);
+}
+
+.page-id-8,
+.parent-pageid-8 {
+	$silo-color: $lab;
+	$silo-bg: "assets/images/patterns/lab.png";
+	$silo-bg-sticky: "assets/images/patterns/sticky-lab.png";
+	$silo-bg-hero: "assets/images/patterns/hero-lab.png";
+	@include foundation-theme($silo-color,$silo-bg,$silo-bg-sticky,$silo-bg-hero);
+}
+
+.page-id-10,
+.parent-pageid-10{
+	$silo-color: $education;
+	$silo-bg: "assets/images/patterns/education.png";
+	$silo-bg-sticky: "assets/images/patterns/sticky-education.png";
+	$silo-bg-hero: "assets/images/patterns/hero-education.png";
+	@include foundation-theme($silo-color,$silo-bg,$silo-bg-sticky,$silo-bg-hero);
+}
+
+.page-id-13,
+.parent-pageid-13,
+.tax-community-news-type,
+.tax-culture-type{
+	$silo-color: $community;
+	$silo-bg: "assets/images/patterns/community.png";
+	$silo-bg-sticky: "assets/images/patterns/sticky-community.png";
+	$silo-bg-hero: "assets/images/patterns/hero-community.png";
+	@include foundation-theme($silo-color,$silo-bg,$silo-bg-sticky,$silo-bg-hero);
+}
+
+.page-id-41,
+.parent-pageid-41,
+.tax-kids-news-type,
+.tax-kids-store-type{
+	$silo-color: $kids;
+	$silo-bg: "assets/images/patterns/kids.png";
+	$silo-bg-sticky: "assets/images/patterns/sticky-kids.png";
+	$silo-bg-hero: "assets/images/patterns/hero-kids.png";
+	@include foundation-theme($silo-color,$silo-bg,$silo-bg-sticky,$silo-bg-hero);
+}
+
+.page-template-template-donate {
+	$silo-color: $donate;
+	@include foundation-theme($silo-color);	
+}
+
+
+// COMMUNITY CULTURE FILTER
+@mixin community-culture-theme($filter-color:$filter-default) {
+	.icon{
+		color: $filter-color;
+	}
+	.article-block__icon .icon,
+	.article-block__footer--cta .icon{
+		color: #fff !important;
+	}
+	.article-block__icon{
+		background-color: $filter-color;
+	}
+	&:hover .article-block__header--title{
+		color: $filter-color;
+	}
+	.article-block__footer--meta-date{
+		color: $filter-color;	
+	}
+	.article-block__footer--cta{
+		background-color: $filter-color;
+	}
+}
+
+.filter-list__item--filter-all{
+	@include community-culture-theme($filter-all);
+}
+
+.filter-list__item--filter-books,
+.article-block--books{
+	@include community-culture-theme($filter-books);
+}
+
+.filter-list__item--filter-body-electric-kids-books,
+.article-block--books-kids {
+	@include community-culture-theme($filter-books-kids);
+}
+
+.filter-list__item--filter-videos,
+.article-block--videos {
+	@include community-culture-theme($filter-videos);
+}
+
+.filter-list__item--filter-articles,
+.article-block--articles {
+	@include community-culture-theme($filter-articles);
+}
+
+.filter-list__item--filter-external-links,
+.article-block--external-links {
+	@include community-culture-theme($filter-external-links);
+}
+
+
+.filter-list__item--filter-apps,
+.article-block--apps {
+	@include community-culture-theme($filter-kids-store-apps);
+}
+
+
+.filter-list__item--filter-games,
+.article-block--games {
+	@include community-culture-theme($filter-kids-store-games);
+}
+
+
+.article-block--dyk {
+	@include community-culture-theme($kids);
+}
+
+// KIDS
+
+body.page-id-41{
+  background-image:
+    linear-gradient(
+      to bottom, 
+      #4d8dc9,
+      #9663a8,
+      #d13893,
+      #ef4037,
+      #f26f37,
+      #f4be30,
+      #6cc073,
+      #6cc073,
+      #6cc073
+    );
+  }
