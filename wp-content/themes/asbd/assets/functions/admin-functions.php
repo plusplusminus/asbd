@@ -356,6 +356,18 @@ class ckCustomPostTypes {
 			'name'       => __( 'Page Title', 'cmb2' ),
 			'desc'       => __( 'Alternate page title', 'cmb2' ),
 			'id'         => $prefix . 'page_title',
+			'type'    => 'wysiwyg',
+			'options' => array(
+			    'wpautop' => true, // use wpautop?
+			    'media_buttons' => false, // show insert/upload button(s)
+			    'textarea_rows' => get_option('default_post_edit_rows', 3), // rows="..."
+			    'teeny' => true, // output the minimal editor config used in Press This
+			),
+		) );
+
+		$page_meta->add_field( array(
+			'name'       => __( 'Page Sub Title', 'cmb2' ),
+			'id'         => $prefix . 'page_sub_title',
 			'type'       => 'text',
 		) );
 

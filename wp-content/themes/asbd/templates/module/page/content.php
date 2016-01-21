@@ -21,8 +21,10 @@
 				<?php $page_quote_author = get_post_meta($post->ID,'_asbd_page_quote_author',true); ?>
 				<?php $page_quote_content = get_post_meta($post->ID,'_asbd_page_quote_content',true); ?>
 				<?php $page_title = get_post_meta($post->ID,'_asbd_page_title',true); ?>
+				<?php $page_sub_title = get_post_meta($post->ID,'_asbd_page_sub_title',true); ?>
 				<?php $page_btn_label = get_post_meta($post->ID,'_asbd_page_btn_label',true); ?>
 				<?php $page_btn_link = get_post_meta($post->ID,'_asbd_page_btn_link',true); ?>
+
 				<?php if (!empty($page_quote_content)):
 					$quote_test = 'hasquote';
 					else :
@@ -43,7 +45,7 @@
 							<?php the_post_thumbnail('full',array('class' => 'entry__header--img img-responsive')); ?>
 							<h2 class="entry__header--title">
 								<?php if (!empty($page_title)): ?>
-									<?php echo $page_title; ?>
+									<?php echo wpautop($page_title); ?>
 								<?php else: ?>
 									<?php the_title(); ?>
 								<?php endif; ?>
@@ -51,10 +53,15 @@
 							</h2>
 						</div>
 						<div class="entry__content">
+							<?php if (!empty($page_sub_title)): ?>
+								<p class="entry__content--sub-title"><?php echo $page_sub_title;?></p>
+							<?php endif; ?>
+
 							<?php the_content(); ?>
 							<?php if (!empty($page_btn_label)): ?>
 								<a class="entry__content--btn" href="<?php echo $page_btn_link;?>"><?php echo $page_btn_label;?></a>
 							<?php endif; ?>
+
 							<?php if (!empty($page_btn_label)): ?>
 								<div class="entry__emails">
 									<div class="entry__emails--col"><a class="entry__emails--email" href="mailto:jeff@astorybydesign.com">jeff@astorybydesign.com</a></div>

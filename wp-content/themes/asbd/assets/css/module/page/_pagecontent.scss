@@ -16,6 +16,12 @@
 		@include m(title) {
 			font-weight: 100;
 			color: $default;
+			line-height: 2.6rem;
+			em{
+				font-style: normal;
+				color: $default;
+				font-family: $font-family-regular;
+			}
 			.page-id-4 &{
 				color: inherit;
 			}
@@ -35,6 +41,10 @@
 		text-align: justify;
 		.page-id-4 &{
 			text-align: center;
+		}
+		@include m(sub-title) {
+			font-size: $font-size-lg;
+			font-family: $font-family-regular;
 		}
 		strong{
 			font-family: $font-family-regular;
@@ -62,6 +72,10 @@
 			}
 		}
 	}
+}
+
+#child-69{
+
 }
 
 .quote{
