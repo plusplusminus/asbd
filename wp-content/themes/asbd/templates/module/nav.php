@@ -18,8 +18,8 @@
 				</button>
 			</div>
 
-			<div class="navbar__main-nav">
-				<?php main_nav('main-nav','nav-items collapse'); ?>
+			<div id="menu-primary" class="navbar__main-nav collapse navbar-toggleable-md">
+				<?php main_nav('main-nav','nav-items'); ?>
 			</div>
 
 		</div>

@@ -28,6 +28,9 @@
 	}
 	@include e(main-nav) {
 		padding: 0;
+		.page-template-template-home &{
+			display: block !important;
+		}
 		.nav-items{
 			padding: 0;
 			list-style: none;
@@ -35,10 +38,7 @@
 			text-align: center;
 			padding-top: 1rem;
 			padding-bottom: 1rem;
-			.page-template-template-home &{
-				@extend .in;
-			}
-			@include media-breakpoint-up(sm) {
+			@include media-breakpoint-up(lg) {
 				padding: 0;
 			}
 			&:after{
@@ -53,7 +53,7 @@
 				.page-template-template-home &{
 					display: none;
 				}
-				@include media-breakpoint-up(sm) {
+				@include media-breakpoint-up(lg) {
 					width: 30rem;
 					margin-left: -15rem;
 				}
@@ -67,7 +67,7 @@
 				position: absolute;
 				left: 50%;
 				margin-left: -5rem;
-				@include media-breakpoint-up(sm) {
+				@include media-breakpoint-up(lg) {
 					width: 30rem;
 					margin-left: -15rem;
 				}
