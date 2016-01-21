@@ -11,8 +11,9 @@ $font-family-thin: 				"clear_sans_thinregular", sans-serif !default;
 $font-family-base: 				$font-family-thin !default;
 $font-family-regular:			"clear_sansregular", sans-serif !default;
 
-$font-family-serif: 			"freight-display-pro", sans-serif !default;
-$font-family-sans-serif: 		"freight-sans-pro", sans-serif !default; //navigation
+$font-family-serif: 			$font-family-base;
+$font-family-sans-serif: 		Georgia, sans-serif !default; //navigation
+$font-family-btn:				'Roboto Slab', serif;
 
 $headings-font-family:       	$font-family-thin !default;
 $headings-font-weight:       	400 !default;

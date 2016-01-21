@@ -9,6 +9,13 @@
 		@include m(children) {
 		}
 	}
+	@include e(description) {
+		text-align: center;
+		font-family: $font-family-light;
+		margin-top: 0.5rem;
+		text-transform: lowercase;
+		font-size: ($font-size-base * 1.2);
+	}
 }
 
 .entry{
@@ -17,6 +24,7 @@
 			font-weight: 100;
 			color: $default;
 			line-height: 2.6rem;
+			text-shadow: 0px 0px 5px #fff;
 			em{
 				font-style: normal;
 				color: $default;
@@ -59,6 +67,10 @@
 			margin-bottom: 2rem; 
 			@extend %btn;
 			@extend %btn-primary;
+			@extend %btn-sm;
+			@include media-breakpoint-up(sm) {
+				@extend %btn-lg;
+			}
 		}
 	}
 	@include e(emails) {

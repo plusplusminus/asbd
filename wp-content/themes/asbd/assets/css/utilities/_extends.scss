@@ -19,7 +19,7 @@
 %btn {
   display: inline-block;
   font-weight: $btn-font-weight;
-  font-family: $font-family-sans-serif;
+  font-family: $font-family-btn;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-align: center;
@@ -110,7 +110,7 @@
 
 %btn-sm {
   // line-height: ensure proper height of button next to small input
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+  @include button-size($btn-padding-y, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
 }
 
 %btn-block {

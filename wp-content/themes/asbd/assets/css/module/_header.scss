@@ -1,9 +1,24 @@
+.navbar-toggler{
+	font-family: $font-family-regular;
+	font-size: $font-size-sm;
+	padding: 0 10px;
+	vertical-align: text-top;
+	&:active,
+	&:focus,
+	&:hover{
+		color: $default;
+		outline: none;
+	}
+}
 .navbar{
 	.navbar-logo{
 		display: inline-block;
-		padding: 25px 0;
+		padding: 15px 0 0 0;
 		img{
-			max-height: 30px;
+			max-height: 60px;
+		}
+		.page-template-template-home &{
+			display: none;
 		}
 	}
 	@include m(main) {
@@ -18,25 +33,44 @@
 			list-style: none;
 			margin: 0;	
 			text-align: center;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			.page-template-template-home &{
+				@extend .in;
+			}
+			@include media-breakpoint-up(sm) {
+				padding: 0;
+			}
 			&:after{
 				content: "";
 				display: block;
 				height: $border-width;
 				background: $gray-border;
-				width: 30rem;
+				width: 10rem;
 				position: absolute;
 				left: 50%;
-				margin-left: -15rem;
+				margin-left: -5rem;
+				.page-template-template-home &{
+					display: none;
+				}
+				@include media-breakpoint-up(sm) {
+					width: 30rem;
+					margin-left: -15rem;
+				}
 			}
 			&:before{
 				content: "";
 				display: block;
 				height: $border-width;
 				background: $gray-border;
-				width: 30rem;
+				width: 10rem;
 				position: absolute;
 				left: 50%;
-				margin-left: -15rem;
+				margin-left: -5rem;
+				@include media-breakpoint-up(sm) {
+					width: 30rem;
+					margin-left: -15rem;
+				}
 			}
 			@include e(item) {
 				display: inline-block;
@@ -45,10 +79,18 @@
 				font-size: $font-size-sm;
 				font-family: $font-family-regular;
 				margin-left: -5px;
-				margin-top: 0.5rem;
-				margin-bottom: 0.5rem;
+				display: block;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				@include media-breakpoint-up(lg) {
+					display: inline-block;
+					margin-top: 0.5rem;
+					margin-bottom: 0.5rem;
+				}
 				&:before{
-					content: "|";
+					@include media-breakpoint-up(lg) {
+						content: "|";
+					}
 				}
 				&:first-child{
 					&:before{

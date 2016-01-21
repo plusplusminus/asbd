@@ -4,8 +4,18 @@
 	}
 	@include e(entry) {
 		position: relative;
-		margin-top: 6rem;
+		margin-top: 2rem;
 		margin-bottom: 4rem;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		.page-template-template-home &{
+			margin-bottom: 0;
+		}
+		@include media-breakpoint-up(lg) {
+			margin-top: 6rem;
+			padding-left: 0;
+			padding-right: 0;
+		}
 		@include m(noquote) {
 			margin-top: 0;
 		}
@@ -20,17 +30,24 @@
 				@extend %content-100;
 			}
 			position: relative;
-			margin-bottom: 10rem;
+			margin-bottom: 6rem;
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 10rem;
+			}
 			&:after{
 				content: "";
 				display: block;
 				height: $border-width;
 				background: $gray-border;
-				width: 30rem;
+				width: 10rem;
 				position: absolute;
 				left: 50%;
-				margin-left: -15rem;
+				margin-left: -5rem;
 				bottom: -3rem;
+				@include media-breakpoint-up(lg) {
+					width: 30rem;
+					margin-left: -15rem;
+				}
 			}
 			&:last-child{
 				margin-bottom: 4rem;
@@ -42,11 +59,13 @@
 	}
 }
 
-#child-69{
-	background: url(assets/images/bald-head.png) no-repeat left 2rem;
+#child-69{	
 	padding-bottom: 4rem;
-	background-size: contain;
 	margin-bottom: -4rem;
+	@include media-breakpoint-up(md) {
+		background: url(assets/images/bald-head.png) no-repeat left 2rem;
+		background-size: contain;
+	}
 	.wrapper{
 		position: relative;
 		@extend %content-m-60-100;
@@ -69,17 +88,22 @@
 		margin-top: 2rem;
 		@include m(col) {
 			@include make-col();
-			@include make-col-span(4);
+			@include make-col-span(12);
+			@include media-breakpoint-up(lg) {
+				@include make-col-span(4);
+			}
 		}
 	}
 }
 
 
 .quote{
-	max-width: 40%;
-	position: absolute;
-	top: -4rem;
-	right: 0;
+	@include media-breakpoint-up(lg) {
+		max-width: 40%;
+		position: absolute;
+		top: -4rem;
+		right: 0;
+	}
 	@include e(content) {
 	}
 	@include e(author) {

@@ -5,7 +5,6 @@ URL: htp://www.plusplusminus.co.za
 */
 
 require_once( 'library/navwalker.php' ); 
-require_once( 'assets/functions/menu-functions.php' );
 
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/library/admin/ReduxCore/framework.php' ) ) {
     require_once( dirname( __FILE__ ) . '/library/admin/ReduxCore/framework.php' );
@@ -26,9 +25,9 @@ require_once( 'library/bones.php' ); // if you remove this, bones will break
 require_once( 'library/admin.php' ); // this comes turned off by default
 
 require_once( 'assets/functions/admin-functions.php' ); 
-require_once( 'assets/functions/jlfoundation-functions.php' ); 
+require_once( 'assets/functions/asbd-functions.php' ); 
 
-$jlfoundation_theme = new jlfoundationTheme();
+$asbd_theme = new asbdTheme();
 
 function main_nav($nav = 'secondary-nav',$class='nav_secondary') {
     // display the wp3 menu if available

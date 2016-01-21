@@ -1,12 +1,10 @@
 .site-footer{
 	border-top: $border-width solid $gray-border;
 	@include e(legal) {
-		float: right;
+		text-align: center;
 		padding: 1rem;
 		@include m(text) {
-			text-align: left;
 			margin-bottom: 0;
-			display: inline-block;
 			font-size: $font-size-sm;
 		}
 	}
