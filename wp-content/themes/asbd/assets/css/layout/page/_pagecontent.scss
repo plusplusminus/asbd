@@ -1,62 +1,87 @@
 .page-content{
-	padding: 4rem 0 4rem;
-	@extend %content-m-60-100;
-	text-align: center;
 	.page-child &,
 	.page-template-default &{
-		text-align: left;
-		padding: 2rem 0 4rem;
 	}
 	@include e(entry) {
-		padding-bottom: 2rem;
-	}
-}
-
-.post-content{
-	padding: 0 0 4rem;
-	@extend %content-m-60-100;
-	text-align: left;
-	@include e(entry) {
-		padding-bottom: 2rem;
-	}
-}
-
-.post-content,
-.page-content{
-	@include e(pagination) {
-		width: 100%;
-		position: absolute;
-		@include m(btn) {
-			&.btn-next{
-				float: right;
+		position: relative;
+		margin-top: 6rem;
+		margin-bottom: 4rem;
+		@include m(noquote) {
+			margin-top: 0;
+		}
+		@include m(nochild) {
+			@extend %content-m-60-100;
+		}
+		@include m(children) {
+		}
+		@include m(child) {
+			@extend %content-m-60-100;
+			&#child-69{
+				@extend %content-100;
 			}
-			&.btn-previous{
-				float: left;
+			position: relative;
+			margin-bottom: 10rem;
+			&:after{
+				content: "";
+				display: block;
+				height: $border-width;
+				background: $gray-border;
+				width: 30rem;
+				position: absolute;
+				left: 50%;
+				margin-left: -15rem;
+				bottom: -3rem;
+			}
+			&:last-child{
+				margin-bottom: 4rem;
+				&:after{
+					display: none;
+				}
 			}
 		}
 	}
 }
 
-.tax{
-	@include m(row) {
-		@include make-row();
-	}
-	@include e(image) {
-		@include make-col();
-		@include make-col-span(6);
-		padding: 0;
-	}
-	@include e(body) {
-		@include make-col();
-		@include make-col-span(6);
-		padding: 2rem 4rem;
+#child-69{
+	background: url(assets/images/bald-head.png) no-repeat left 2rem;
+	padding-bottom: 4rem;
+	background-size: contain;
+	margin-bottom: -4rem;
+	.wrapper{
+		position: relative;
+		@extend %content-m-60-100;
 	}
 }
 
-.donate-form{
-	padding-top: 8rem;
-	padding-bottom: 8rem;
-	@include e(wrapper) {
-		@extend %content-m-60-100;
+.entry{
+	@include e(header) {
+	margin-bottom: 2rem;
+		@include m(title) {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+			font-weight: 100;
+		}
+	}
+	@include e(content) {
+	}
+	@include e(emails) {
+		@include make-row();
+		margin-top: 2rem;
+		@include m(col) {
+			@include make-col();
+			@include make-col-span(4);
+		}
+	}
+}
+
+
+.quote{
+	max-width: 40%;
+	position: absolute;
+	top: -4rem;
+	right: 0;
+	@include e(content) {
+	}
+	@include e(author) {
 	}
 }

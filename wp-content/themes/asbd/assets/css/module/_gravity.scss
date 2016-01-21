@@ -4,7 +4,6 @@ body{
 		.gform_heading{
 			margin-bottom: 2rem;
 			.gform_title{
-				font-size: $font-size-xl;
 				font-weight: 100;
 				margin-bottom: 2rem;
 			}
@@ -19,16 +18,13 @@ body{
 					&.gsection{
 						border: none;
 						.gsection_title{
-							font-family: $font-family-sans-serif;
 							text-transform: uppercase;
 							letter-spacing: 0.1em !important;
 							border-bottom: $border-width solid $gray-border;
-							font-size: $font-size-sm;
 							padding-bottom: 0.5rem !important;
 						}
 						.gsection_description{
 							font-weight: 600;
-							font-family: $font-family-sans-serif;
 							border: none;
 							letter-spacing: 0.1em;
 							padding-bottom: 0;
@@ -41,7 +37,6 @@ body{
 					textarea,
 					select{
 						padding: 0.5rem;
-						border-radius: 0.3rem;
 						border: $border-width solid $gray-border;
 						transition: 0.3s;
 						&:active,
@@ -53,9 +48,7 @@ body{
 					}
 					.ginput_complex{
 						label{
-							font-family: $font-family-sans-serif;
 							text-transform: uppercase;
-							font-size: $font-size-sm;
 							font-weight: 500;
 							color: $gray;
 							letter-spacing: 0.1em;
@@ -120,15 +113,4 @@ body{
 			border: none;
 		}
 	}
-}
-
-.gform_wrapper li.gfield.gfield_creditcard_warning div.gfield_creditcard_warning_message{
-	display: none;
-}
-.gform_wrapper li.gfield.gfield_creditcard_warning div.gfield_creditcard_warning_message span{
-	display: none !important;
-}
-.gform_wrapper li.gfield.gfield_creditcard_warning{
-	border: none !important;
-	padding: inherit !important;
 }

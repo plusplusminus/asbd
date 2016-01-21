@@ -1,102 +1,13 @@
 .site-footer{
-	background: $brand-bg-darker;
-	@include e(nav) {
-		.nav-items{
-			padding: 0;
-			list-style: none;
-			margin: 0;
-			float: left;
-			@include e(item) {
-				display: inline-block;
-				border-top: ($border-width * 5) solid $default;
-				font-family: $font-family-serif;
-				font-size: 1.2rem;
-				transition: 0.3s;
-				&.foundation{
-					border-top-color: $foundation;
-				}
-				&.education{
-					border-top-color: $education;
-				}
-				&.lab{
-					border-top-color: $lab;
-				}
-				&.community{
-					border-top-color: $community;
-				}
-				&.kids{
-					border-top-color: $kids;
-				}
-				@include m(contact) {
-					border-top-color: $lab;
-				}
-				@include m(donate) {
-					border-top-color: $education;
-				}
-				@include m(privacy) {
-					border-top-color: $community;
-				}
-				&:first-child{
-					border-top-color: $education;
-				}
-				&:last-child{
-					border-top-color: $lab;
-				}
-				@include m(link) {
-					padding: 2rem;
-					display: inline-block;
-					color: rgba(255,255,255,0.8);
-					transition: 0.3s;
-				}
-				&:hover,
-				&:active,
-				&:focus{
-					border-top-color: $brand-bg-darker;
-					outline: none;
-					a{
-						color: rgba(255,255,255,1);
-						text-decoration: none;
-						&:hover,
-						&:active,
-						&:focus{
-							text-decoration: none;
-						}
-					}
-				}
-			}
-		}
-	}
+	border-top: $border-width solid $gray-border;
 	@include e(legal) {
 		float: right;
-		padding: 2.2rem;
+		padding: 1rem;
 		@include m(text) {
-			color: #6a7e99;
-			font-size: $font-size-xs;
-			font-family: $font-family-sans-serif;
-			text-align: right;
+			text-align: left;
 			margin-bottom: 0;
 			display: inline-block;
-		}
-		.nav-items{
-			display: inline-block;
-			float: right;
-			padding-left: 1rem;
-			@include e(item) {
-				padding: 0 0.5rem;
-				display: inline;
-				list-style: none;
-				@include m(link) {
-					color: $brand-bg;
-					transition: 0.3s;
-					&:before{
-						vertical-align: middle;
-					}
-					&:hover{
-						text-decoration: none;
-						color: #fff;
-					}
-				}
-			}
+			font-size: $font-size-sm;
 		}
 	}
 }

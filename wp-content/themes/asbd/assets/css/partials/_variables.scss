@@ -6,23 +6,21 @@
 /* ----------------------------------------------------------------------------
  * Fonts
  * ------------------------------------------------------------------------- */
-$font-family-base: 				"fira-sans", sans-serif !default;
+$font-family-light: 			"clear_sans_lightregular", sans-serif !default;
+$font-family-thin: 				"clear_sans_thinregular", sans-serif !default;
+$font-family-base: 				$font-family-thin !default;
+$font-family-regular:			"clear_sansregular", sans-serif !default;
+
 $font-family-serif: 			"freight-display-pro", sans-serif !default;
 $font-family-sans-serif: 		"freight-sans-pro", sans-serif !default; //navigation
-$font-family-kids: 				"verveine", sans-serif !default;
-$font-family-kids-heading: 		"sketchnote-square", sans-serif !default;
 
+$headings-font-family:       	$font-family-thin !default;
 $headings-font-weight:       	400 !default;
 
-$font-size-body: 				1.4rem;
-$font-size-lg: 					1.6rem;
-$font-size-xl: 					1.8rem;
-$font-size-xxl: 				3rem;
+$font-size-root:             	20px !default;
 /* ----------------------------------------------------------------------------
  * Colors
  * ------------------------------------------------------------------------- */
-$default-btn: 				#6cc073;
-$default:	 				#6cc073;	
 
 $gray-lighter: 				#b0bec5; //Nav base
 $gray-light: 				#f6f9fa; //subnav bg
@@ -30,42 +28,8 @@ $gray: 						#9b9b9b; //small heading
 $gray-dark: 				#4c4f53; //Text
 $gray-border: 				#dfdfdf; //borders
 
-$brand-bg-darker: 			#253c59;
-$brand-bg-dark: 			#437baf;
-$brand-bg: 					#4d8dc9;
-$brand-bg-light:			#5ec9e0;
-
-$brand-tax:					#9663a8;
-
-$silo-default:				#6cc073;
-
-$foundation: 				#6cc073;
-$foundation-d: 				#6cc073;
-
-$lab: 						#f26f37;
-$lab-d: 					#f26f37;
-
-$education: 				#f5b618;
-$education-d: 				#f5b618;
-
-$community: 				#1bbce0;
-$community-d: 				#1bbce0;
-
-$kids: 						#df5679;
-$kids-d: 					#df5679;
-
-$donate: 					#9663a8;
-
-// Filter
-$filter-default:			#ef4037;
-$filter-all:				#ef4037;
-$filter-books:				#f4be30;
-$filter-books-kids:			#f4be30;
-$filter-videos:				#4d8dc9;
-$filter-articles:			#6cc073;
-$filter-external-links:		#9663a8;
-$filter-kids-store-apps:	#6cc073;
-$filter-kids-store-games:	#4d8dc9;
+$default:					#B4975A;
+$default-btn:				#EB2227;
 
 /* ----------------------------------------------------------------------------
  * Other
@@ -77,25 +41,6 @@ $btn-padding-y:                  .75rem !default;
 $btn-padding-x-lg:               3rem !default;
 $btn-padding-y-lg:               1.2rem !default;
 
-$border-radius:          	0.35rem !default;
-$border-radius-lg:       	0.5rem !default;
+$border-radius:          	0rem !default;
+$border-radius-lg:       	0rem !default;
 $border-radius-sm:       	0rem !default;
-
-// Modals
-
-// Padding applied to the modal body
-$modal-inner-padding:         2rem !default;
-
-$modal-title-padding:         2rem !default;
-
-$modal-content-bg:                             #fff !default;
-$modal-content-border-color:                   rgba(0,0,0,.2) !default;
-
-$modal-backdrop-bg:           #000 !default;
-$modal-backdrop-opacity:      .5 !default;
-$modal-header-border-color:   #e5e5e5 !default;
-$modal-footer-border-color:   $modal-header-border-color !default;
-
-$modal-lg:                    900px !default;
-$modal-md:                    600px !default;
-$modal-sm:                    300px !default;

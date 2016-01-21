@@ -21,8 +21,6 @@ $enable-flex:true;
 @import "vendor/normalize";
 @import "vendor/sanitize";
 
-@import "vendor/slider";
-
 /* ----------------------------------------------------------------------------
  * Structure
  * ------------------------------------------------------------------------- */
@@ -36,42 +34,20 @@ $enable-flex:true;
 /* ----------------------------------------------------------------------------
  * Layout
  * ------------------------------------------------------------------------- */
-@import "layout/pagenav";
-@import "layout/pagehead";
-@import "layout/footercta";
 @import "layout/sitefooter";
-@import "layout/filter";
-
 @import "layout/page/pagecontent";
-
-@import "layout/feed/feed";
 
 
 /* ----------------------------------------------------------------------------
  * Modules
  * ------------------------------------------------------------------------- */
-@import "module/pagenav";
-@import "module/pagehead";
-@import "module/footercta";
 @import "module/sitefooter";
 @import "module/header";
-@import "module/filter";
 @import "module/gravity";
-@import "module/modals";
-
-@import "module/feed/feed";
-
-@import "module/parent/hero";
-
 @import "module/page/pagecontent";
-
-@import "module/theme";
-
-
-
 
 
 /* ----------------------------------------------------------------------------
  * Fonts
  * ------------------------------------------------------------------------- */
-@import "fonts/_jlfoundation";
+@import "fonts/ClearSans";
