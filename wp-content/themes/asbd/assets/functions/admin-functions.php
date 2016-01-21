@@ -3,7 +3,7 @@ class ckCustomPostTypes {
 
 	public function __construct() {
 
-		add_action( 'cmb2_init', array($this,'jlfoundation_custom_meta'));
+		add_action( 'cmb2_init', array($this,'asbd_custom_meta'));
 		add_action( 'cmb2_admin_init', array($this,'taxonomy_register_taxonomy_metabox' ));
 		add_action('init',array($this,'jlfoundation_custom_posts'));
 		add_action('init',array($this,'jlfoundation_taxonomies'));
@@ -339,7 +339,7 @@ class ckCustomPostTypes {
  ** Custom Meta Boxes **
  ----------------------*/
 
-	public function jlfoundation_custom_meta() {
+	public function asbd_custom_meta() {
 
 		$prefix = '_asbd_';
 		// NEW META
@@ -370,6 +370,12 @@ class ckCustomPostTypes {
 			'name'       => __( 'Page Quote Text', 'cmb2' ),
 			'id'         => $prefix . 'page_quote_content',
 			'type'       => 'textarea',
+		) );
+
+		$page_meta->add_field( array(
+			'name'       => __( 'Button Label', 'cmb2' ),
+			'id'         => $prefix . 'page_btn_label',
+			'type'       => 'text',
 		) );
 
 
