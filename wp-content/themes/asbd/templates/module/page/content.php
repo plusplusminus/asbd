@@ -23,6 +23,7 @@
 					<?php $page_quote_content = get_post_meta($post->ID,'_asbd_page_quote_content',true); ?>
 					<?php $page_title = get_post_meta($post->ID,'_asbd_page_title',true); ?>
 					<?php $page_btn_label = get_post_meta($post->ID,'_asbd_page_btn_label',true); ?>
+					<?php $page_btn_link = get_post_meta($post->ID,'_asbd_page_btn_link',true); ?>
 
 					<div id="child-<?php echo $post->ID;?>" class="page-content__entry--child">
 						<?php if (!empty($page_quote_content)): ?>
@@ -46,7 +47,7 @@
 						<div class="entry__content">
 							<?php the_content(); ?>
 							<?php if (!empty($page_btn_label)): ?>
-								<a class="entry__content--btn" href="#"><?php echo $page_btn_label;?></a>
+								<a class="entry__content--btn" href="<?php echo $page_btn_link;?>"><?php echo $page_btn_label;?></a>
 							<?php endif; ?>
 						</div>
 					</div><!--/.child-->
