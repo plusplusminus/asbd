@@ -376,24 +376,22 @@ class ckCustomPostTypes {
 			'name'       => __( 'Button Label', 'cmb2' ),
 			'id'         => $prefix . 'page_btn_label',
 			'type'       => 'text',
+			'show_on_cb'  => 'cmb_id_is_cta',
+		) );
+
+		$page_meta->add_field( array(
+			'name'       => __( 'Button Link', 'cmb2' ),
+			'id'         => $prefix . 'page_btn_link',
+			'type'       => 'text_url',
+			'show_on_cb'  => 'cmb_id_is_cta',
 		) );
 
 
 		//---
 		// CMB2 Conditional Functions
 		//---
-
-		// Page Title on Home Page
-		function cmb_id_home($field) { global $post; return ($post->ID == 50) ; }
-
-		function cmb_id_not_home($field) { global $post; return ($post->ID != 50) ; }
-
-		// Donate page detailed intro
-		function cmb_id_donate($field) { global $post; return ($post->ID == 20) ; }
-
-		// Community page
-		function cmb_id_culture($field) { global $post; return ($post->ID == 31) ; }
-
+		
+		function cmb_id_is_cta($field) { global $post; return ($post->ID == 69) ; }
 		
 	} 
 }
